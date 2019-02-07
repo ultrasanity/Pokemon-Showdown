@@ -59,6 +59,21 @@ class App extends React.Component {
   transformData(outputData){
     var lines = outputData.split("\n")
     console.log(lines);
+
+    console.log("Turn: " + lines[lines.length-1].split("|")[2]);
+    for(var i = 0; i < lines.length; i++){
+      var currentLine = lines[i].split("|");
+
+      switch(currentLine[0]){
+        case "update":
+          break;
+
+        default:
+          console.log(currentLine[0]);
+      }
+
+    }
+
   }
 
   displayData = () => {
