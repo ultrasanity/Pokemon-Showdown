@@ -23,14 +23,32 @@ stream.write(`>player p1 {"name":"Me"}`);
 stream.write(`>player p2 {"name":"AI"}`);
 
 function getRndInteger(min, max) {
-  return Math.floor(Math.random() * (max - min)) + min;
+  return Math.floor(Math.random() * (max - min + 1) + min);
 }
+
+var fainted = []
 
 rl.setPrompt('');
 rl.prompt();
 rl.on('line', function(line) {
     stream.write(line);
-    stream.write(`>p2 move ` + getRndInteger(1,4));
+    if(getRndInteger(0,1) == 0)
+      stream.write(`>p2 move ` + getRndInteger(1,4));
+    else  {
+      if(fainted.length < 5) {
+        while (true) {
+          var switchChoice = getRndInteger(2,6);
+
+          if(!fainted.includes(switchChoice)) {
+            stream.write(`>p2 switch ` + switchChoice);
+            break;
+          }
+        }
+      }
+      else
+        stream.write(`>p2 move ` + getRndInteger(1,4));
+
+    }
     rl.prompt();
 }).on('close', function() {
     console.log('Have a great day!');
