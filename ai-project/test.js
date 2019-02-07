@@ -3,6 +3,7 @@ var express = require('express');
 var readline = require('readline'),
     rl = readline.createInterface(process.stdin, process.stdout);
 
+
 var app = express();
 
 stream = new Sim.BattleStream();
@@ -36,8 +37,16 @@ rl.on('line', function(line) {
     process.exit(0);
 });
 
-app.get('/output', function (req, res) {
-   res.send(appOutput.toString());
+
+
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
+app.get('/output', function (req, res, next) {
+   res.send(JSON.stringify({"output": appOutput.toString()}));
    appOutput = [];
 })
 
@@ -45,5 +54,5 @@ var server = app.listen(8081, "127.0.0.1",function () {
    var host = server.address().address
    var port = server.address().port
 
-   console.log("Example app listening at http://%s:%s", host, port)
+   console.log("Example app listening at http://%s:%s\n", host, port)
 })
