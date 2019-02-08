@@ -21,3 +21,4 @@ Checks
 	- Cursed Body/Disabled
 	- Choice items
 	- Multi-turn moves (Solar Beam, Geomancy, Outrage, etc.)
+	- Encore
