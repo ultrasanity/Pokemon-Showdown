@@ -8,6 +8,7 @@ import RadioGroup from '@material-ui/core/RadioGroup';
 import Radio from '@material-ui/core/Radio';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
+import BattleTurn from './BattleTurn.js'
 
 const styles = theme => ({
   root: {
@@ -41,7 +42,6 @@ class App extends React.Component {
       .then(
         (result) => {
           if(result["output"] != ""){
-            // console.log(result["output"]);
             this.setState({
               outputData: result["output"],
             });
@@ -54,11 +54,6 @@ class App extends React.Component {
           });
         }
       )
-  }
-
-  transformData(outputData){
-    var lines = outputData.split("\n")
-    console.log(lines);
   }
 
   displayData = () => {
@@ -95,7 +90,8 @@ class App extends React.Component {
     var headerData = this.displayData()
 
     if(this.state.outputData != null){
-      this.transformData(this.state.outputData)
+      var turn = new BattleTurn();
+      turn.transformData(this.state.outputData)
       var headerData = this.displayData()
     }
 
