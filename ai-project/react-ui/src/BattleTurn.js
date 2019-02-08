@@ -49,7 +49,6 @@ class BattleTurn {
             var tempLine = lines[i].split("|")
             switch(tempLine[1]){
               case "":
-                // console.log(tempLine[1]);
                 break;
               case "faint":
                 var effected = tempLine[2].split(": ")
