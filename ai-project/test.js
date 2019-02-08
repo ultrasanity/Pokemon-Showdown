@@ -9,11 +9,13 @@ var app = express();
 stream = new Sim.BattleStream();
 
 var appOutput = [];
+var output;
 
 (async () => {
-    let output;
     while ((output = await stream.read())) {
+        console.log('******************************************************');
         console.log(output);
+        console.log('******************************************************');
         appOutput.push(output);
     }
 })();
@@ -22,31 +24,55 @@ stream.write(`>start {"formatid":"gen7randombattle"}`);
 stream.write(`>player p1 {"name":"Me"}`);
 stream.write(`>player p2 {"name":"AI"}`);
 
+var fainted = []
+
 function getRndInteger(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
-var fainted = []
+function messageParser(input) {
+  if(/faint\|p2a/.test(input)) {
+    switchOut(true);
+  }
+}
+
+function switchOut(faintedSwitch) {
+  while (true) {
+    var switchChoice = getRndInteger(2,6);
+
+    if(!fainted.includes(switchChoice)) {
+      if(faintedSwitch)
+        fainted.push(switchChoice);
+      var p2Turn = `>p2 switch ` + switchChoice;
+      stream.write(p2Turn);
+      console.log(p2Turn);
+      break;
+    }
+  }
+}
 
 rl.setPrompt('');
 rl.prompt();
 rl.on('line', function(line) {
-    stream.write(line);
-    if(getRndInteger(0,1) == 0)
-      stream.write(`>p2 move ` + getRndInteger(1,4));
-    else  {
-      if(fainted.length < 5) {
-        while (true) {
-          var switchChoice = getRndInteger(2,6);
 
-          if(!fainted.includes(switchChoice)) {
-            stream.write(`>p2 switch ` + switchChoice);
-            break;
-          }
-        }
+    messageParser(output);
+
+    var p2Turn;
+
+    stream.write(line);
+    if(getRndInteger(0,1) == 0) {
+      p2Turn = `>p2 move ` + getRndInteger(1,4);
+      stream.write(p2Turn);
+      console.log(p2Turn);
+    }
+    else  {
+      if(fainted.length < 5)
+        switchOut(false);
+      else {
+        p2Turn = `>p2 move ` + getRndInteger(1,4);
+        stream.write(`>p2 move ` + moveChoice);
+        console.log(p2Turn);
       }
-      else
-        stream.write(`>p2 move ` + getRndInteger(1,4));
 
     }
     rl.prompt();
