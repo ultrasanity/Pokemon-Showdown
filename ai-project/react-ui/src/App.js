@@ -56,13 +56,14 @@ class App extends React.Component {
       )
   }
 
-  displayData = () => {
-    var p1name = "Bob";
+  displayData = (turn) => {
+    var p1name = turn.p1.name;
+    var p2name = turn.p2.name;
     var reactHeaderData = [<Typography variant="h5" component="h3">
-                      Player 1:  {p1name};
+                      Player 1:  {p1name}
                   </Typography>,
                   <Typography variant="h5" component="h3">
-                      Player 2:
+                      Player 2:  {p2name}
                   </Typography>
                   ]
     var reactDescData = [[<Typography component="p">
@@ -87,12 +88,12 @@ class App extends React.Component {
     const { classes } = this.props;
     const { spacing } = this.state;
 
-    var headerData = this.displayData()
+    var headerData = this.displayData(new BattleTurn())
 
     if(this.state.outputData != null){
       var turn = new BattleTurn();
       turn.transformData(this.state.outputData)
-      var headerData = this.displayData()
+      var headerData = this.displayData(turn)
     }
 
     return (
