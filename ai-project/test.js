@@ -1,10 +1,12 @@
 const Sim = require('./../sim');
 var express = require('express');
+const BattleTurn = require('./battle-turn')
 var readline = require('readline'),
     rl = readline.createInterface(process.stdin, process.stdout);
 
 
 var app = express();
+var turn = new BattleTurn.BattleTurn();
 
 stream = new Sim.BattleStream();
 
@@ -16,6 +18,7 @@ var output;
         console.log('******************************************************');
         console.log(output);
         console.log('******************************************************');
+        turn.transformData(output);
         appOutput.push(output);
     }
 })();
@@ -54,7 +57,6 @@ function switchOut(faintedSwitch) {
 rl.setPrompt('');
 rl.prompt();
 rl.on('line', function(line) {
-
     messageParser(output);
 
     var p2Turn;
@@ -73,8 +75,10 @@ rl.on('line', function(line) {
         stream.write(`>p2 move ` + moveChoice);
         console.log(p2Turn);
       }
-
     }
+    // console.log(turn.outputLines);
+    console.log(turn.p1);
+    console.log(turn.p2);
     rl.prompt();
 }).on('close', function() {
     console.log('Have a great day!');
@@ -90,7 +94,11 @@ app.use(function(req, res, next) {
 });
 
 app.get('/output', function (req, res, next) {
-   res.send(JSON.stringify({"output": appOutput.toString()}));
+   res.send(JSON.stringify(
+     {"output": appOutput.toString(),
+      "player1": JSON.stringify(turn.p1),
+      "player2": JSON.stringify(turn.p2)
+    }));
    appOutput = [];
 })
 
