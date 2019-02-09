@@ -8,7 +8,6 @@ import RadioGroup from '@material-ui/core/RadioGroup';
 import Radio from '@material-ui/core/Radio';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
-import BattleTurn from './BattleTurn.js'
 
 const styles = theme => ({
   root: {
@@ -30,6 +29,8 @@ class App extends React.Component {
   state = {
     spacing: '16',
     outputData: null,
+    player1: null,
+    player2: null
   };
 
   componentDidMount() {
@@ -41,9 +42,11 @@ class App extends React.Component {
       .then(res => res.json())
       .then(
         (result) => {
-          if(result["output"] != ""){
+          if(result["output"] !== ""){
             this.setState({
               outputData: result["output"],
+              player1: JSON.parse(result["player1"]),
+              player2: JSON.parse(result["player2"])
             });
           }
         },
@@ -56,9 +59,28 @@ class App extends React.Component {
       )
   }
 
-  displayData = (turn) => {
-    var p1name = turn.p1.name;
-    var p2name = turn.p2.name;
+  displayData = (player1, player2) => {
+    var reactData = {}
+    if (player1 == null || player2 == null){
+      var reactHeaderData = [<Typography variant="h5" component="h3">
+                        Player 1:
+                    </Typography>,
+                    <Typography variant="h5" component="h3">
+                        Player 2:
+                    </Typography>
+                    ]
+      var reactDescData = [[<Typography component="p">
+                            Team: ;
+                        </Typography>,
+                      ],[<Typography component="p">
+                            Team: ;
+                        </Typography>]]
+      reactData = {header: reactHeaderData,
+                      desc: reactDescData}
+      return reactData
+    }
+    var p1name = player1.name;
+    var p2name = player2.name;
     var reactHeaderData = [<Typography variant="h5" component="h3">
                       Player 1:  {p1name}
                   </Typography>,
@@ -72,7 +94,7 @@ class App extends React.Component {
                     ],[<Typography component="p">
                           Team: ;
                       </Typography>]]
-    var reactData = {header: reactHeaderData,
+    reactData = {header: reactHeaderData,
                     desc: reactDescData}
 
     return reactData
@@ -88,12 +110,13 @@ class App extends React.Component {
     const { classes } = this.props;
     const { spacing } = this.state;
 
-    var headerData = this.displayData(new BattleTurn())
+    var headerData = this.displayData(null, null)
 
     if(this.state.outputData != null){
-      var turn = new BattleTurn();
-      turn.transformData(this.state.outputData)
-      var headerData = this.displayData(turn)
+      var headerData = this.displayData(this.state.player1, this.state.player2)
+      console.log(this.state.outputData.split("\n"));
+      console.log(this.state.player1);
+      console.log(this.state.player2);
     }
 
     return (

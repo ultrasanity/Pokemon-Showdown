@@ -1,10 +1,12 @@
 const Sim = require('./../sim');
 var express = require('express');
+const BattleTurn = require('./battle-turn')
 var readline = require('readline'),
     rl = readline.createInterface(process.stdin, process.stdout);
 
 
 var app = express();
+var turn = new BattleTurn.BattleTurn();
 
 stream = new Sim.BattleStream();
 
@@ -17,6 +19,7 @@ var output;
         console.log(output);
         messageParser(output);
         console.log('******************************************************');
+        turn.transformData(output);
         appOutput.push(output);
     }
 })();
@@ -117,7 +120,11 @@ app.use(function(req, res, next) {
 });
 
 app.get('/output', function (req, res, next) {
-   res.send(JSON.stringify({"output": appOutput.toString()}));
+   res.send(JSON.stringify(
+     {"output": appOutput.toString(),
+      "player1": JSON.stringify(turn.p1),
+      "player2": JSON.stringify(turn.p2)
+    }));
    appOutput = [];
 })
 
