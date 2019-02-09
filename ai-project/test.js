@@ -17,6 +17,7 @@ var output;
     while ((output = await stream.read())) {
         console.log('******************************************************');
         console.log(output);
+        messageParser(output);
         console.log('******************************************************');
         turn.transformData(output);
         appOutput.push(output);
@@ -28,15 +29,31 @@ stream.write(`>player p1 {"name":"Me"}`);
 stream.write(`>player p2 {"name":"AI"}`);
 
 var fainted = []
+var waitForP1 = false;
+var p2LastCommand;
 
 function getRndInteger(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
 function messageParser(input) {
-  if(/faint\|p2a/.test(input)) {
-    switchOut(true);
+  if(/faint\|p1a/.test(input))
+    waitForP1 = true;
+  else if(/faint\|p2a/.test(input)) {
+    if(fainted.length < 5)
+      switchOut(true);
   }
+}
+
+function invalidChoiceParser(input) {
+  if(/error\|\[Invalid choice\]/.test(input)) {
+  //  console.log("TRUE!!!");
+    console.log(p2LastCommand);
+    return true;
+  }
+  else
+  //  console.log("FALSE!!!!");
+    return false;
 }
 
 function switchOut(faintedSwitch) {
@@ -46,9 +63,12 @@ function switchOut(faintedSwitch) {
     if(!fainted.includes(switchChoice)) {
       if(faintedSwitch)
         fainted.push(switchChoice);
-      var p2Turn = `>p2 switch ` + switchChoice;
-      stream.write(p2Turn);
-      console.log(p2Turn);
+      if(!invalidChoiceParser(output)) {
+        var p2Turn = `>p2 switch ` + switchChoice;
+        p2LastCommand = p2Turn;
+        stream.write(p2Turn);
+        console.log(p2Turn);
+      }
       break;
     }
   }
@@ -57,28 +77,34 @@ function switchOut(faintedSwitch) {
 rl.setPrompt('');
 rl.prompt();
 rl.on('line', function(line) {
-    messageParser(output);
-
     var p2Turn;
 
     stream.write(line);
-    if(getRndInteger(0,1) == 0) {
-      p2Turn = `>p2 move ` + getRndInteger(1,4);
-      stream.write(p2Turn);
-      console.log(p2Turn);
-    }
-    else  {
-      if(fainted.length < 5)
-        switchOut(false);
-      else {
-        p2Turn = `>p2 move ` + getRndInteger(1,4);
-        stream.write(`>p2 move ` + moveChoice);
-        console.log(p2Turn);
+
+    if(!waitForP1) {
+      if(getRndInteger(0,1) == 0) {
+        if(!invalidChoiceParser(output)) {
+          p2Turn = `>p2 move ` + getRndInteger(1,4);
+          p2LastCommand = p2Turn;
+          stream.write(p2Turn);
+          console.log(p2Turn);
+        }
+      }
+      else  {
+        if(fainted.length < 5)
+          switchOut(false);
+        else {
+          if(!invalidChoiceParser(output)) {
+            p2Turn = `>p2 move ` + getRndInteger(1,4);
+            p2LastCommand = p2Turn;
+            stream.write(p2Turn);
+            console.log(p2Turn);
+          }
+        }
       }
     }
-    // console.log(turn.outputLines);
-    console.log(turn.p1);
-    console.log(turn.p2);
+    else
+      waitForP1 = false;
     rl.prompt();
 }).on('close', function() {
     console.log('Have a great day!');
