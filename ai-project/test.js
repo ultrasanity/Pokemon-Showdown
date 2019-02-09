@@ -27,6 +27,7 @@ stream.write(`>player p2 {"name":"AI"}`);
 
 var fainted = []
 var waitForP1 = false;
+var p2LastCommand;
 
 function getRndInteger(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
@@ -35,8 +36,21 @@ function getRndInteger(min, max) {
 function messageParser(input) {
   if(/faint\|p1a/.test(input))
     waitForP1 = true;
-  else if(/faint\|p2a/.test(input))
-    switchOut(true);
+  else if(/faint\|p2a/.test(input)) {
+    if(fainted.length < 5)
+      switchOut(true);
+  }
+}
+
+function invalidChoiceParser(input) {
+  if(/error\|\[Invalid choice\]/.test(input)) {
+  //  console.log("TRUE!!!");
+    console.log(p2LastCommand);
+    return true;
+  }
+  else
+  //  console.log("FALSE!!!!");
+    return false;
 }
 
 function switchOut(faintedSwitch) {
@@ -46,9 +60,12 @@ function switchOut(faintedSwitch) {
     if(!fainted.includes(switchChoice)) {
       if(faintedSwitch)
         fainted.push(switchChoice);
-      var p2Turn = `>p2 switch ` + switchChoice;
-      stream.write(p2Turn);
-      console.log(p2Turn);
+      if(!invalidChoiceParser(output)) {
+        var p2Turn = `>p2 switch ` + switchChoice;
+        p2LastCommand = p2Turn;
+        stream.write(p2Turn);
+        console.log(p2Turn);
+      }
       break;
     }
   }
@@ -63,17 +80,23 @@ rl.on('line', function(line) {
 
     if(!waitForP1) {
       if(getRndInteger(0,1) == 0) {
-        p2Turn = `>p2 move ` + getRndInteger(1,4);
-        stream.write(p2Turn);
-        console.log(p2Turn);
+        if(!invalidChoiceParser(output)) {
+          p2Turn = `>p2 move ` + getRndInteger(1,4);
+          p2LastCommand = p2Turn;
+          stream.write(p2Turn);
+          console.log(p2Turn);
+        }
       }
       else  {
         if(fainted.length < 5)
           switchOut(false);
         else {
-          p2Turn = `>p2 move ` + getRndInteger(1,4);
-          stream.write(p2Turn);
-          console.log(p2Turn);
+          if(!invalidChoiceParser(output)) {
+            p2Turn = `>p2 move ` + getRndInteger(1,4);
+            p2LastCommand = p2Turn;
+            stream.write(p2Turn);
+            console.log(p2Turn);
+          }
         }
       }
     }
