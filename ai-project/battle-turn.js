@@ -7,7 +7,8 @@ class BattleTurn {
       team: [],
       lastEvent: {
         event: null
-      }
+      },
+      active: null
     }
     this.p2 = {
       name: null,
@@ -15,7 +16,8 @@ class BattleTurn {
       team: [],
       lastEvent: {
         event: null
-      }
+      },
+      active: null
     }
     this.lines = null
 

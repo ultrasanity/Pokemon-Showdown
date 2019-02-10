@@ -8,6 +8,7 @@ import RadioGroup from '@material-ui/core/RadioGroup';
 import Radio from '@material-ui/core/Radio';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
+import ActiveCard from './ActiveCard'
 
 const styles = theme => ({
   root: {
@@ -59,47 +60,6 @@ class App extends React.Component {
       )
   }
 
-  displayData = (player1, player2) => {
-    var reactData = {}
-    if (player1 == null || player2 == null){
-      var reactHeaderData = [<Typography variant="h5" component="h3">
-                        Player 1:
-                    </Typography>,
-                    <Typography variant="h5" component="h3">
-                        Player 2:
-                    </Typography>
-                    ]
-      var reactDescData = [[<Typography component="p">
-                            Team: ;
-                        </Typography>,
-                      ],[<Typography component="p">
-                            Team: ;
-                        </Typography>]]
-      reactData = {header: reactHeaderData,
-                      desc: reactDescData}
-      return reactData
-    }
-    var p1name = player1.name;
-    var p2name = player2.name;
-    var reactHeaderData = [<Typography variant="h5" component="h3">
-                      Player 1:  {p1name}
-                  </Typography>,
-                  <Typography variant="h5" component="h3">
-                      Player 2:  {p2name}
-                  </Typography>
-                  ]
-    var reactDescData = [[<Typography component="p">
-                          Team: ;
-                      </Typography>,
-                    ],[<Typography component="p">
-                          Team: ;
-                      </Typography>]]
-    reactData = {header: reactHeaderData,
-                    desc: reactDescData}
-
-    return reactData
-  }
-
   handleChange = key => (event, value) => {
     this.setState({
       [key]: value,
@@ -125,12 +85,7 @@ class App extends React.Component {
           <Grid container className={classes.demo} justify="center" spacing={Number(spacing)}>
             {[0, 1].map(value => (
               <Grid key={value} item>
-                <Paper className={classes.paper}>
-                  {headerData.header[value]}
-                  {headerData.desc[value].map(function(x, index){
-                    return x;
-                  })}
-                </Paper>
+                <ActiveCard poke="unown-question"/>
               </Grid>
             ))}
           </Grid>
