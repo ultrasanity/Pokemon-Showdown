@@ -17,8 +17,6 @@ const styles = theme => ({
   paper: {
     height: 300,
     width: 400,
-    margin: 20,
-    padding: 20
   },
   control: {
     padding: theme.spacing.unit * 2,
@@ -70,13 +68,12 @@ class App extends React.Component {
     const { classes } = this.props;
     const { spacing } = this.state;
 
-    var headerData = this.displayData(null, null)
-
+    var headerData = [null, null]
     if(this.state.outputData != null){
-      var headerData = this.displayData(this.state.player1, this.state.player2)
-      console.log(this.state.outputData.split("\n"));
-      console.log(this.state.player1);
-      console.log(this.state.player2);
+      headerData = [
+        <ActiveCard poke={this.state.player1.active.details.split(",")[0].toLowerCase()}/>,
+        <ActiveCard poke={this.state.player2.active.details.split(",")[0].toLowerCase()}/>,
+      ]
     }
 
     return (
@@ -84,8 +81,13 @@ class App extends React.Component {
         <Grid item xs={12}>
           <Grid container className={classes.demo} justify="center" spacing={Number(spacing)}>
             {[0, 1].map(value => (
-              <Grid key={value} item>
-                <ActiveCard poke="unown-question"/>
+              <Grid key={value} item
+                className={classes.paper} 
+                style={{
+                  margin: 20,
+                  padding: 20
+                }}>
+                {headerData[value]}
               </Grid>
             ))}
           </Grid>
