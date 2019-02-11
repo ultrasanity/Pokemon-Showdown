@@ -16,6 +16,8 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 import ShareIcon from '@material-ui/icons/Share';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
+const BattleItems = require('./data/items').BattleItems
+const BattlePokedex = require('./data/pokedex').BattlePokedex
 
 const styles = theme => ({
   card: {
@@ -40,7 +42,7 @@ const styles = theme => ({
     transform: 'rotate(180deg)',
   },
   avatar: {
-    backgroundColor: red[500],
+    backgroundColor: "#0000b3",
   },
 });
 
@@ -51,15 +53,49 @@ class ActiveCard extends React.Component {
     this.setState(state => ({ expanded: !state.expanded }));
   };
 
+  formatGifName(poke){
+    poke = poke.toLowerCase();
+
+    if(poke.includes(" ")){
+      console.log(poke.replace(" ",""));
+      return poke.replace(" ","");
+    }
+
+    return poke
+  }
+
+  formatPokedexName(poke){
+    poke = poke.toLowerCase();
+
+    if(poke.includes("-")){
+      return poke.replace("-","");
+    }
+
+    if(poke.includes(" ")){
+      return poke.replace(" ","");
+    }
+
+    return poke
+  }
+
+  formatType(types){
+    if(types.length == 2){
+      return types[0] + "/" + types[1]
+    } else{
+      return types[0]
+    }
+  }
+
   render() {
     const { classes } = this.props;
 
+    // console.log(BattleItems);
     return (
       <Card className={classes.card}>
         <CardHeader
           avatar={
             <Avatar aria-label="Recipe" className={classes.avatar}>
-              R
+              {this.props.playerid}
             </Avatar>
           }
           action={
@@ -67,12 +103,14 @@ class ActiveCard extends React.Component {
               <MoreVertIcon />
             </IconButton>
           }
-          title="Shrimp and Chorizo Paella"
-          subheader="September 14, 2016"
+          title={this.props.active.details.split(",")[0]}
+          subheader={"Type: " + this.formatType(BattlePokedex[this.formatPokedexName(this.props.active.details.split(",")[0])].types)
+                    + ", HP: " + this.props.active.condition
+                    + ", Item: " + BattleItems[this.props.active.item]["name"] }
         />
         <div>
           <img
-            src={"http://play.pokemonshowdown.com/sprites/xyani/" + this.props.poke + ".gif"}
+            src={"http://play.pokemonshowdown.com/sprites/xyani/" + this.formatGifName(this.props.active.details.split(",")[0]) + ".gif"}
             alt="new"
             style={{
               display: "block",
@@ -83,8 +121,7 @@ class ActiveCard extends React.Component {
         </div>
         <CardContent>
           <Typography component="p">
-            This impressive paella is a perfect party dish and a fun meal to cook together with your
-            guests. Add 1 cup of frozen peas along with the mussels, if you like.
+            top level filler info
           </Typography>
         </CardContent>
         <CardActions className={classes.actions} disableActionSpacing>

@@ -70,9 +70,14 @@ class App extends React.Component {
 
     var headerData = [null, null]
     if(this.state.outputData != null){
+      console.log(this.state.player1);
       headerData = [
-        <ActiveCard poke={this.state.player1.active.details.split(",")[0].toLowerCase()}/>,
-        <ActiveCard poke={this.state.player2.active.details.split(",")[0].toLowerCase()}/>,
+        <ActiveCard
+          playerid={"P1"}
+          active={this.state.player1.active}/>,
+        <ActiveCard 
+          playerid={"P2"}
+          active={this.state.player2.active}/>,
       ]
     }
 
@@ -82,7 +87,7 @@ class App extends React.Component {
           <Grid container className={classes.demo} justify="center" spacing={Number(spacing)}>
             {[0, 1].map(value => (
               <Grid key={value} item
-                className={classes.paper} 
+                className={classes.paper}
                 style={{
                   margin: 20,
                   padding: 20
@@ -92,7 +97,7 @@ class App extends React.Component {
             ))}
           </Grid>
         </Grid>
-        <Grid item xs={12}>
+        <Grid item xs={12} style={{zIndex:-1}}>
           <Paper className={classes.control}>
             <Grid container>
               <Grid item>
