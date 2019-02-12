@@ -16,6 +16,7 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 import ShareIcon from '@material-ui/icons/Share';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
+import Moves from './Moves';
 const BattleItems = require('./data/items').BattleItems
 const BattlePokedex = require('./data/pokedex').BattlePokedex
 
@@ -61,7 +62,16 @@ class ActiveCard extends React.Component {
       return poke.replace(" ","");
     }
 
-    return poke
+    switch(poke){
+      case "kommo-o":
+        return "kommo";
+        break;
+      case "mr.mime":
+        return "mrmime";
+        break;
+      default:
+        return poke
+    }
   }
 
   formatPokedexName(poke){
@@ -120,9 +130,7 @@ class ActiveCard extends React.Component {
           />
         </div>
         <CardContent>
-          <Typography component="p">
-            top level filler info
-          </Typography>
+          <Moves />
         </CardContent>
         <CardActions className={classes.actions} disableActionSpacing>
           <IconButton aria-label="Add to favorites">
