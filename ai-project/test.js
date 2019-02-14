@@ -1,11 +1,16 @@
 const Sim = require('./../sim');
 var express = require('express');
 const BattleTurn = require('./battle-turn')
+const bodyParser = require('body-parser');
 var readline = require('readline'),
     rl = readline.createInterface(process.stdin, process.stdout);
 
 
 var app = express();
+
+// parse application/json
+app.use(bodyParser.json())
+
 var turn = new BattleTurn.BattleTurn();
 
 stream = new Sim.BattleStream();
@@ -119,6 +124,53 @@ app.use(function(req, res, next) {
   next();
 });
 
+// app.use(bodyParser.urlencoded({ extended: false }));
+
+app.post('/input', function(req, res) {
+    console.log(req.body.move);
+    var move = req.body.move
+    var switchPoke = req.body.switch
+
+    // rl.prompt();
+
+    if (move == null){
+      stream.write(switchPoke);
+    }
+
+    if (switchPoke == null){
+      stream.write(move);
+    }
+
+    var p2Turn;
+
+    if(!waitForP1) {
+      if(getRndInteger(0,1) == 0) {
+        if(!invalidChoiceParser(output)) {
+          p2Turn = `>p2 move ` + getRndInteger(1,4);
+          p2LastCommand = p2Turn;
+          stream.write(p2Turn);
+          console.log(p2Turn);
+        }
+      }
+      else  {
+        if(fainted.length < 5)
+          switchOut(false);
+        else {
+          if(!invalidChoiceParser(output)) {
+            p2Turn = `>p2 move ` + getRndInteger(1,4);
+            p2LastCommand = p2Turn;
+            stream.write(p2Turn);
+            console.log(p2Turn);
+          }
+        }
+      }
+    }
+    else
+      waitForP1 = false;
+
+    res.send({ status: 'SUCCESS' });
+})
+
 app.get('/output', function (req, res, next) {
    res.send(JSON.stringify(
      {"output": appOutput.toString(),
@@ -131,6 +183,5 @@ app.get('/output', function (req, res, next) {
 var server = app.listen(8081, "127.0.0.1",function () {
    var host = server.address().address
    var port = server.address().port
-
    console.log("Example app listening at http://%s:%s\n", host, port)
 })

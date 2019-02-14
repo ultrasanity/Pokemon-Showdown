@@ -69,6 +69,9 @@ class ActiveCard extends React.Component {
       case "mr.mime":
         return "mrmime";
         break;
+      case "ho-oh":
+        return "hooh";
+        break;
       default:
         return poke
     }
@@ -99,7 +102,8 @@ class ActiveCard extends React.Component {
   render() {
     const { classes } = this.props;
 
-    // console.log(BattleItems);
+    // console.log(BattleMovedex["slash"]);
+
     return (
       <Card className={classes.card}>
         <CardHeader
@@ -130,7 +134,7 @@ class ActiveCard extends React.Component {
           />
         </div>
         <CardContent>
-          <Moves />
+          <Moves moves={this.props.active.moves}/>
         </CardContent>
         <CardActions className={classes.actions} disableActionSpacing>
           <IconButton aria-label="Add to favorites">

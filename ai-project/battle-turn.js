@@ -1,3 +1,5 @@
+const BattleMovedex = require('./moves').BattleMovedex
+
 class BattleTurn {
   constructor() {
     this.currentTurn = null;
@@ -21,6 +23,15 @@ class BattleTurn {
     }
     this.lines = null
 
+  }
+
+  getMoveNames(moves){
+    return moves.map(function(x) {
+      if(x.startsWith("hiddenpower")){
+        x = slice(0, x.length-2);
+      }
+      return BattleMovedex[x].name
+      });
   }
 
   transformData(outputData){
@@ -90,17 +101,19 @@ class BattleTurn {
               this.p1.id = request.side.id
               this.p1.team = request.side.pokemon
               this.p1.active = request.side.pokemon[0]
-              // this.p1.team
+              this.p1.active.moves = this.getMoveNames(this.p1.active.moves)
               break;
             case "p2":
               this.p2.id = request.side.id
               this.p2.name = request.side.name
               this.p2.team = request.side.pokemon
               this.p2.active = request.side.pokemon[0]
+              this.p2.active.moves = this.getMoveNames(this.p2.active.moves)
               break;
             default:
               break;
           }
+
 
           break;
         default:

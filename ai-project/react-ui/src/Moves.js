@@ -18,45 +18,68 @@ const styles = theme => ({
   }
 });
 
-function ContainedButtons(props) {
-  const { classes } = props;
-  return (
-    <div>
-      <Button
-        variant="contained"
-        color="primary"
-        className={classNames(classes.margin, classes.cssRoot)}
-        onClick={() => { console.log('onClick'); }}
-      >
-        Move 1
-      </Button>
-      <Button
-        variant="contained"
-        color="primary"
-        className={classNames(classes.margin, classes.cssRoot)}
-      >
-        Move 2
-      </Button>
-      <Button
-        variant="contained"
-        color="primary"
-        className={classNames(classes.margin, classes.cssRoot)}
-      >
-        Move 3
-      </Button>
-      <Button
-        variant="contained"
-        color="primary"
-        className={classNames(classes.margin, classes.cssRoot)}
-      >
-        Move 4
-      </Button>
-    </div>
-  );
+
+class Moves extends React.Component {
+
+  handleInput = (move, switchPoke) => {
+    fetch("http://localhost:8081/input", {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        move: move,
+        switch: switchPoke,
+      })
+    });
+  }
+
+  render(){
+    const { classes } = this.props;
+    // console.log(this.props.moves);
+    return (
+      <div>
+        <Button
+          variant="contained"
+          color="primary"
+          className={classNames(classes.margin, classes.cssRoot)}
+          onClick={() => { this.handleInput(">p1 move 1", null); }}
+        >
+          {this.props.moves[0]}
+        </Button>
+        <Button
+          variant="contained"
+          color="primary"
+          className={classNames(classes.margin, classes.cssRoot)}
+          onClick={() => { this.handleInput(">p1 move 2", null); }}
+        >
+          {this.props.moves[1]}
+        </Button>
+        <Button
+          variant="contained"
+          color="primary"
+          className={classNames(classes.margin, classes.cssRoot)}
+          onClick={() => { this.handleInput(">p1 move 3", null); }}
+        >
+          {this.props.moves[2]}
+        </Button>
+        <Button
+          variant="contained"
+          color="primary"
+          className={classNames(classes.margin, classes.cssRoot)}
+          onClick={() => { this.handleInput(">p1 move 4", null); }}
+        >
+          {this.props.moves[3]}
+        </Button>
+      </div>
+    );
+  }
+
 }
 
-ContainedButtons.propTypes = {
+Moves.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(ContainedButtons);
+export default withStyles(styles)(Moves);
