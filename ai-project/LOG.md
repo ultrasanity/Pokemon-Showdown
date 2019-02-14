@@ -1,4 +1,4 @@
-Log
+Log test
 ==================
 
 The purpose of this is just to keep track of issues or checks that need to be accounted for.
