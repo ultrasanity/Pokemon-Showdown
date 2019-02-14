@@ -28,7 +28,7 @@ class BattleTurn {
   getMoveNames(moves){
     return moves.map(function(x) {
       if(x.startsWith("hiddenpower")){
-        x = slice(0, x.length-2);
+        x = x.slice(0, x.length-2);
       }
       return BattleMovedex[x].name
       });
