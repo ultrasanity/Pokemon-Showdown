@@ -102,8 +102,6 @@ class ActiveCard extends React.Component {
   render() {
     const { classes } = this.props;
 
-    // console.log(BattleMovedex["slash"]);
-
     return (
       <Card className={classes.card}>
         <CardHeader
@@ -134,7 +132,7 @@ class ActiveCard extends React.Component {
           />
         </div>
         <CardContent>
-          <Moves moves={this.props.active.moves}/>
+          <Moves moves={this.props.moves}/>
         </CardContent>
         <CardActions className={classes.actions} disableActionSpacing>
           <IconButton aria-label="Add to favorites">

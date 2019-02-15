@@ -35,9 +35,18 @@ class Moves extends React.Component {
     });
   }
 
+  getMoveNames(moves){
+    return moves.map(function(x) {
+      if(x.move.startsWith("Return")){
+        x.move = x.move.slice(0, x.move.length - 4);
+      }
+      return x.move
+      });
+  }
+
   render(){
     const { classes } = this.props;
-    // console.log(this.props.moves);
+    var names = this.getMoveNames(this.props.moves)
     return (
       <div>
         <Button
@@ -46,7 +55,7 @@ class Moves extends React.Component {
           className={classNames(classes.margin, classes.cssRoot)}
           onClick={() => { this.handleInput(">p1 move 1", null); }}
         >
-          {this.props.moves[0]}
+          {names[0]}
         </Button>
         <Button
           variant="contained"
@@ -54,7 +63,7 @@ class Moves extends React.Component {
           className={classNames(classes.margin, classes.cssRoot)}
           onClick={() => { this.handleInput(">p1 move 2", null); }}
         >
-          {this.props.moves[1]}
+          {names[1]}
         </Button>
         <Button
           variant="contained"
@@ -62,7 +71,7 @@ class Moves extends React.Component {
           className={classNames(classes.margin, classes.cssRoot)}
           onClick={() => { this.handleInput(">p1 move 3", null); }}
         >
-          {this.props.moves[2]}
+          {names[2]}
         </Button>
         <Button
           variant="contained"
@@ -70,7 +79,7 @@ class Moves extends React.Component {
           className={classNames(classes.margin, classes.cssRoot)}
           onClick={() => { this.handleInput(">p1 move 4", null); }}
         >
-          {this.props.moves[3]}
+          {names[3]}
         </Button>
       </div>
     );

@@ -74,10 +74,12 @@ class App extends React.Component {
       headerData = [
         <ActiveCard
           playerid={"P1"}
-          active={this.state.player1.active}/>,
-        <ActiveCard 
+          active={this.state.player1.active}
+          moves={this.state.player1.activeMoves}/>,
+        <ActiveCard
           playerid={"P2"}
-          active={this.state.player2.active}/>,
+          active={this.state.player2.active}
+          moves={this.state.player2.activeMoves}/>,
       ]
     }
 
