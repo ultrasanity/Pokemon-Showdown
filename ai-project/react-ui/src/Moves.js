@@ -38,24 +38,24 @@ function getColors(typeColors){
 }
 
 const typeColors = {
-  "bug": "#A8B820",
-	"dark": "#705848",
-	"dragon": "#7038F8",
-	"electric": "#F8D030",
-	"fairy": "#EE99AC",
-	"fighting": "#C03028",
-	"fire": "#F08030",
-	"flying": "#A890F0",
-	"ghost": "#705898",
-	"grass": "#78C850",
-	"ground": "#E0C068",
-	"ice": "#98D8D8",
-	"normal": "#A8A881",
-	"poison": "#A040A0",
-	"psychic": "#F85888",
-	"rock": "#B8A038",
-	"steel": "#B8B8D0",
-	"water": "#6890F0",
+  "Bug": "#A8B820",
+	"Dark": "#705848",
+	"Dragon": "#7038F8",
+	"Electric": "#F8D030",
+	"Fairy": "#EE99AC",
+	"Fighting": "#C03028",
+	"Fire": "#F08030",
+	"Flying": "#A890F0",
+	"Ghost": "#705898",
+	"Grass": "#78C850",
+	"Ground": "#E0C068",
+	"Ice": "#98D8D8",
+	"Normal": "#A8A881",
+	"Poison": "#A040A0",
+	"Psychic": "#F85888",
+	"Rock": "#B8A038",
+	"Steel": "#B8B8D0",
+	"Water": "#6890F0",
 }
 
 const theme =  getColors(typeColors);
@@ -90,7 +90,7 @@ class Moves extends React.Component {
     var names = this.getMoveNames(this.props.moves)
     return (
       <div>
-        <MuiThemeProvider theme={theme.fire}>
+        <MuiThemeProvider theme={theme[this.props.types[0]]}>
           <Button
             variant="contained"
             color="primary"
@@ -100,7 +100,7 @@ class Moves extends React.Component {
             {names[0]}
           </Button>
         </MuiThemeProvider>
-        <MuiThemeProvider theme={theme.fire}>
+        <MuiThemeProvider theme={theme[this.props.types[1]]}>
           <Button
             variant="contained"
             color="primary"
@@ -110,7 +110,7 @@ class Moves extends React.Component {
             {names[1]}
           </Button>
         </MuiThemeProvider>
-        <MuiThemeProvider theme={theme.fire}>
+        <MuiThemeProvider theme={theme[this.props.types[2]]}>
           <Button
             variant="contained"
             color="primary"
@@ -120,7 +120,7 @@ class Moves extends React.Component {
             {names[2]}
           </Button>
         </MuiThemeProvider>
-        <MuiThemeProvider theme={theme.fire}>
+        <MuiThemeProvider theme={theme[this.props.types[3]]}>
           <Button
             variant="contained"
             color="primary"

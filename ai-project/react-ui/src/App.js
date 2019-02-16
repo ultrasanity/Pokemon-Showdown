@@ -75,11 +75,13 @@ class App extends React.Component {
         <ActiveCard
           playerid={"P1"}
           active={this.state.player1.active}
-          moves={this.state.player1.activeMoves}/>,
+          moves={this.state.player1.activeMoves}
+          types={this.state.player1.activeMoveTypes}/>,
         <ActiveCard
           playerid={"P2"}
           active={this.state.player2.active}
-          moves={this.state.player2.activeMoves}/>,
+          moves={this.state.player2.activeMoves}
+          types={this.state.player2.activeMoveTypes}/>,
       ]
     }
 

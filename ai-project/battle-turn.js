@@ -11,7 +11,8 @@ class BattleTurn {
         event: null
       },
       active: null,
-      activeMoves: null
+      activeMoves: null,
+      activeMoveTypes: null
     }
     this.p2 = {
       name: null,
@@ -21,7 +22,8 @@ class BattleTurn {
         event: null
       },
       active: null,
-      activeMoves: null
+      activeMoves: null,
+      activeMoveTypes: null
     }
     this.lines = null
 
@@ -105,6 +107,7 @@ class BattleTurn {
           var player = lines[i+1]
           var team = lines[i+2]
           var request = JSON.parse(team.split("|")[2])
+          console.log(request);
           switch(player){
             case "p1":
               this.p1.name = request.side.name
@@ -112,8 +115,7 @@ class BattleTurn {
               this.p1.team = request.side.pokemon
               this.p1.active = request.side.pokemon[0]
               this.p1.activeMoves = request.active[0].moves
-              // this.p1.active.moves = this.getMoveNames(this.p1.active.moves)
-              // this.p1.moveTypes =
+              this.p1.activeMoveTypes = this.getMoveTypes(this.p1.active.moves)
               break;
             case "p2":
               this.p2.id = request.side.id
@@ -121,7 +123,7 @@ class BattleTurn {
               this.p2.team = request.side.pokemon
               this.p2.active = request.side.pokemon[0]
               this.p2.activeMoves = request.active[0].moves
-              // this.p2.active.moves = this.getMoveNames(this.p2.active.moves)
+              this.p2.activeMoveTypes = this.getMoveTypes(this.p2.active.moves)
               break;
             default:
               break;
