@@ -107,8 +107,6 @@ class BattleTurn {
           var player = lines[i+1]
           var team = lines[i+2]
           var request = JSON.parse(team.split("|")[2])
-          console.log(request);
-
           switch(player){
             case "p1":
               this.p1.name = request.side.name
