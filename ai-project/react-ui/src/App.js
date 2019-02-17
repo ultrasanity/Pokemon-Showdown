@@ -71,18 +71,20 @@ class App extends React.Component {
 
     var headerData = [null, null]
     if(this.state.outputData != null){
-      console.log(this.state.player1);
+      // console.log(this.state.player1);
       headerData = [
         <ActiveCard
           playerid={"P1"}
           active={this.state.player1.active}
           moves={this.state.player1.activeMoves}
-          types={this.state.player1.activeMoveTypes}/>,
+          types={this.state.player1.activeMoveTypes}
+          pokemon={this.state.player1.team}/>,
         <ActiveCard
           playerid={"P2"}
           active={this.state.player2.active}
           moves={this.state.player2.activeMoves}
-          types={this.state.player2.activeMoveTypes}/>,
+          types={this.state.player2.activeMoveTypes}
+          pokemon={this.state.player2.team}/>,
       ]
     }
 

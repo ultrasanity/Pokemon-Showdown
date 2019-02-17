@@ -130,17 +130,17 @@ app.use(function(req, res, next) {
 // app.use(bodyParser.urlencoded({ extended: false }));
 
 app.post('/input', function(req, res) {
-    console.log(req.body.move);
+
     var move = req.body.move
     var switchPoke = req.body.switch
 
-    // rl.prompt();
-
     if (move == null){
+      console.log(switchPoke);
       stream.write(switchPoke);
     }
 
     if (switchPoke == null){
+      console.log(move);
       stream.write(move);
     }
 
