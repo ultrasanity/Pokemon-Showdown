@@ -41,7 +41,8 @@ class App extends React.Component {
       .then(res => res.json())
       .then(
         (result) => {
-          if(result["output"] !== ""){
+          if(result["output"] !== "" &&
+              JSON.parse(result["player1"]).hasOwnProperty("active")){
             this.setState({
               outputData: result["output"],
               player1: JSON.parse(result["player1"]),
@@ -74,10 +75,14 @@ class App extends React.Component {
       headerData = [
         <ActiveCard
           playerid={"P1"}
-          active={this.state.player1.active}/>,
-        <ActiveCard 
+          active={this.state.player1.active}
+          moves={this.state.player1.activeMoves}
+          types={this.state.player1.activeMoveTypes}/>,
+        <ActiveCard
           playerid={"P2"}
-          active={this.state.player2.active}/>,
+          active={this.state.player2.active}
+          moves={this.state.player2.activeMoves}
+          types={this.state.player2.activeMoveTypes}/>,
       ]
     }
 

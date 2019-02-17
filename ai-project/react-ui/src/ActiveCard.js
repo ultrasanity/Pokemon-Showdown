@@ -102,7 +102,8 @@ class ActiveCard extends React.Component {
   render() {
     const { classes } = this.props;
 
-    // console.log(BattleMovedex["slash"]);
+    var name = this.props.active.details.split(",")[0];
+    console.log(this.formatPokedexName(name));
 
     return (
       <Card className={classes.card}>
@@ -134,7 +135,10 @@ class ActiveCard extends React.Component {
           />
         </div>
         <CardContent>
-          <Moves moves={this.props.active.moves}/>
+          <Moves
+                playerid={this.props.playerid}
+                moves={this.props.moves}
+                types={this.props.types}/>
         </CardContent>
         <CardActions className={classes.actions} disableActionSpacing>
           <IconButton aria-label="Add to favorites">
