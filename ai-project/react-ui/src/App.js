@@ -41,7 +41,8 @@ class App extends React.Component {
       .then(res => res.json())
       .then(
         (result) => {
-          if(result["output"] !== ""){
+          if(result["output"] !== "" &&
+              JSON.parse(result["player1"]).hasOwnProperty("active")){
             this.setState({
               outputData: result["output"],
               player1: JSON.parse(result["player1"]),

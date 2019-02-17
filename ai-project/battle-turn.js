@@ -108,22 +108,27 @@ class BattleTurn {
           var team = lines[i+2]
           var request = JSON.parse(team.split("|")[2])
           console.log(request);
+
           switch(player){
             case "p1":
               this.p1.name = request.side.name
               this.p1.id = request.side.id
               this.p1.team = request.side.pokemon
               this.p1.active = request.side.pokemon[0]
-              this.p1.activeMoves = request.active[0].moves
-              this.p1.activeMoveTypes = this.getMoveTypes(this.p1.active.moves)
+              if(request.hasOwnProperty("active")){
+                this.p1.activeMoves = request.active[0].moves
+                this.p1.activeMoveTypes = this.getMoveTypes(this.p1.active.moves)
+              }
               break;
             case "p2":
               this.p2.id = request.side.id
               this.p2.name = request.side.name
               this.p2.team = request.side.pokemon
               this.p2.active = request.side.pokemon[0]
-              this.p2.activeMoves = request.active[0].moves
-              this.p2.activeMoveTypes = this.getMoveTypes(this.p2.active.moves)
+              if(request.hasOwnProperty("active")){
+                this.p2.activeMoves = request.active[0].moves
+                this.p2.activeMoveTypes = this.getMoveTypes(this.p2.active.moves)
+              }
               break;
             default:
               break;

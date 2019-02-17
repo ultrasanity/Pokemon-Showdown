@@ -63,17 +63,19 @@ const theme =  getColors(typeColors);
 class Moves extends React.Component {
 
   handleInput = (move, switchPoke) => {
-    fetch("http://localhost:8081/input", {
-      method: 'POST',
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        move: move,
-        switch: switchPoke,
-      })
-    });
+    if(this.props.playerid == "P1"){
+      fetch("http://localhost:8081/input", {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          move: move,
+          switch: switchPoke,
+        })
+      });
+    }
   }
 
   getMoveNames(moves){
@@ -90,46 +92,18 @@ class Moves extends React.Component {
     var names = this.getMoveNames(this.props.moves)
     return (
       <div>
-        <MuiThemeProvider theme={theme[this.props.types[0]]}>
-          <Button
-            variant="contained"
-            color="primary"
-            className={classes.margin}
-            onClick={() => { this.handleInput(">p1 move 1", null); }}
-          >
-            {names[0]}
-          </Button>
-        </MuiThemeProvider>
-        <MuiThemeProvider theme={theme[this.props.types[1]]}>
-          <Button
-            variant="contained"
-            color="primary"
-            className={classes.margin}
-            onClick={() => { this.handleInput(">p1 move 2", null); }}
-          >
-            {names[1]}
-          </Button>
-        </MuiThemeProvider>
-        <MuiThemeProvider theme={theme[this.props.types[2]]}>
-          <Button
-            variant="contained"
-            color="primary"
-            className={classes.margin}
-            onClick={() => { this.handleInput(">p1 move 3", null); }}
-          >
-            {names[2]}
-          </Button>
-        </MuiThemeProvider>
-        <MuiThemeProvider theme={theme[this.props.types[3]]}>
-          <Button
-            variant="contained"
-            color="primary"
-            className={classes.margin}
-            onClick={() => { this.handleInput(">p1 move 4", null); }}
-          >
-            {names[3]}
-          </Button>
-        </MuiThemeProvider>
+        {this.props.moves.map(value => (
+          <MuiThemeProvider key={this.props.moves.indexOf(value)} theme={theme[this.props.types[this.props.moves.indexOf(value)]]}>
+            <Button
+              variant="contained"
+              color="primary"
+              className={classes.margin}
+              onClick={() => { this.handleInput(">p1 move "+(this.props.moves.indexOf(value)+1), null); }}
+            >
+              {names[this.props.moves.indexOf(value)]}
+            </Button>
+          </MuiThemeProvider>
+        ))}
       </div>
     );
   }
