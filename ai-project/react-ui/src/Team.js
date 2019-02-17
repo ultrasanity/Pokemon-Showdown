@@ -70,7 +70,6 @@ class Team extends React.Component {
 
  render(){
    const { classes } = this.props;
-   console.log(this.props.pokemon.slice(1, 6));
    return (
      <div>
        {this.props.pokemon.slice(1, 6).map(value => (

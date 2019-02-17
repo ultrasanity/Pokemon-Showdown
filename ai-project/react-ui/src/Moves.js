@@ -99,6 +99,7 @@ class Moves extends React.Component {
               color="primary"
               className={classes.margin}
               onClick={() => { this.handleInput(">p1 move "+(this.props.moves.indexOf(value)+1), null); }}
+              disabled={value.disabled}
             >
               {names[this.props.moves.indexOf(value)]}
             </Button>
