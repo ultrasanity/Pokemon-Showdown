@@ -104,6 +104,7 @@ class ActiveCard extends React.Component {
     const { classes } = this.props;
 
     var name = this.props.active.details.split(",")[0];
+    console.log(this.props.active);
 
     return (
       <Card className={classes.card}>

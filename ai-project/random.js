@@ -2,6 +2,13 @@ const Sim = require('./../sim');
 var express = require('express');
 const BattleTurn = require('./battle-turn')
 const bodyParser = require('body-parser');
+var exec = require('child_process').exec;
+
+exec('yarn start', {
+  cwd: './react-ui'
+}, function(error, stdout, stderr) {
+    console.log(stdout);
+});
 var readline = require('readline'),
     rl = readline.createInterface(process.stdin, process.stdout);
 
@@ -52,7 +59,6 @@ function messageParser(input) {
 
 function invalidChoiceParser(input) {
   if(/error\|\[Invalid choice\]/.test(input)) {
-  //  console.log("TRUE!!!");
     console.log(p2LastCommand);
     return true;
   }
@@ -127,17 +133,16 @@ app.use(function(req, res, next) {
 // app.use(bodyParser.urlencoded({ extended: false }));
 
 app.post('/input', function(req, res) {
-    console.log(req.body.move);
     var move = req.body.move
     var switchPoke = req.body.switch
 
-    // rl.prompt();
-
     if (move == null){
+      console.log(switchPoke);
       stream.write(switchPoke);
     }
 
     if (switchPoke == null){
+      console.log(move);
       stream.write(move);
     }
 
