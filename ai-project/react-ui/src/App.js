@@ -71,7 +71,8 @@ class App extends React.Component {
 
     var headerData = [null, null]
     if(this.state.outputData != null){
-      // console.log(this.state.player1);
+      console.log(this.state.player1);
+      console.log(this.state.player2);
       headerData = [
         <ActiveCard
           playerid={"P1"}

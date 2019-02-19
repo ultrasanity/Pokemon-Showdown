@@ -3,6 +3,7 @@ var express = require('express');
 const BattleTurn = require('./battle-turn')
 const bodyParser = require('body-parser');
 var exec = require('child_process').exec;
+const kill = require('kill-port')
 
 exec('yarn start', {
   cwd: './react-ui'
@@ -119,6 +120,10 @@ rl.on('line', function(line) {
     rl.prompt();
 }).on('close', function() {
     console.log('Have a great day!');
+    kill(3000)
+     .then(console.log)
+     .catch(console.log)
+
     process.exit(0);
 });
 

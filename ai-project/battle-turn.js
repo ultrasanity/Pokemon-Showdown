@@ -12,7 +12,8 @@ class BattleTurn {
       },
       active: null,
       activeMoves: null,
-      activeMoveTypes: null
+      activeMoveTypes: null,
+      lastMoveUsed: null
     }
     this.p2 = {
       name: null,
@@ -23,7 +24,8 @@ class BattleTurn {
       },
       active: null,
       activeMoves: null,
-      activeMoveTypes: null
+      activeMoveTypes: null,
+      lastMoveUsed: null
     }
     this.lines = null
 
