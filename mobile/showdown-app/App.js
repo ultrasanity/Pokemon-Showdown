@@ -11,28 +11,40 @@ export default class App extends React.Component {
         <TabNavigator.Item
           selected={this.state.selectedTab === 'home'}
           title="Home"
-          renderIcon={() => <Image source={require('./assets/home.png')} />}
-          renderSelectedIcon={() => <Image source={require('./assets/home.png')} />}
-          badgeText="!"
+          renderIcon={() => <Image
+            style={{width: 20, height: 20}}
+            source={require('./assets/home.png')} />}
+          renderSelectedIcon={() => <Image
+            style={{width: 20, height: 20}}
+            source={require('./assets/home-active.png')} />}
+          badgeText=""
           onPress={() => this.setState({ selectedTab: 'home' })}>
           <View />
         </TabNavigator.Item>
         <TabNavigator.Item
-          selected={this.state.selectedTab === 'profile'}
-          title="Profile"
-          renderIcon={() => <Image source={require('./assets/home.png')} />}
-          renderSelectedIcon={() => <Image source={require('./assets/home.png')} />}
+          selected={this.state.selectedTab === 'battle'}
+          title="Battle"
+          renderIcon={() => <Image
+            style={{width: 20, height: 20}}
+            source={require('./assets/pokeball.png')} />}
+          renderSelectedIcon={() => <Image
+            style={{width: 20, height: 20}}
+            source={require('./assets/pokeball-active.png')} />}
           renderBadge={() => <View />}
-          onPress={() => this.setState({ selectedTab: 'profile' })}>
+          onPress={() => this.setState({ selectedTab: 'battle' })}>
           <View />
         </TabNavigator.Item>
         <TabNavigator.Item
-          selected={this.state.selectedTab === 'profile'}
-          title="Profile"
-          renderIcon={() => <Image source={require('./assets/home.png')} />}
-          renderSelectedIcon={() => <Image source={require('./assets/home.png')} />}
+          selected={this.state.selectedTab === 'chat'}
+          title="Chat"
+          renderIcon={() => <Image
+            style={{width: 20, height: 20}}
+            source={require('./assets/chat.png')} />}
+          renderSelectedIcon={() => <Image
+            style={{width: 20, height: 20}}
+            source={require('./assets/chat-active.png')} />}
           renderBadge={() => <View />}
-          onPress={() => this.setState({ selectedTab: 'profile' })}>
+          onPress={() => this.setState({ selectedTab: 'chat' })}>
           <View />
         </TabNavigator.Item>
       </TabNavigator>
