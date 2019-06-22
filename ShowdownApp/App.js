@@ -1,9 +1,19 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image } from 'react-native';
 import TabNavigator from 'react-native-tab-navigator';
+import HomeView from './views/HomeView'
+// import nodejs from 'nodejs-mobile-react-native';
 
 export default class App extends React.Component {
   state = { selectedTab: 'home' };
+
+  componentWillMount()
+  {
+    console.log("YA");
+    let BattleTypeChart = require("./assets/typechart.js")
+    console.log(BattleTypeChart);
+  }
+
 
   render() {
     return (
@@ -19,7 +29,7 @@ export default class App extends React.Component {
             source={require('./assets/home-active.png')} />}
           badgeText=""
           onPress={() => this.setState({ selectedTab: 'home' })}>
-          <View />
+          <HomeView />
         </TabNavigator.Item>
         <TabNavigator.Item
           selected={this.state.selectedTab === 'battle'}

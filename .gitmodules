@@ -1,0 +1,3 @@
+[submodule "mobile/showdown-app/src/react-native-material-ui"]
+	path = mobile/showdown-app/src/react-native-material-ui
+	url = https://github.com/xotahal/react-native-material-ui
