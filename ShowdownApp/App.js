@@ -2,20 +2,39 @@ import React from 'react';
 import { StyleSheet, Text, View, Image } from 'react-native';
 import TabNavigator from 'react-native-tab-navigator';
 import HomeView from './views/HomeView'
-// import nodejs from 'nodejs-mobile-react-native';
 
 export default class App extends React.Component {
   state = { selectedTab: 'home' };
+  stream = null;
 
-  componentWillMount()
+  componentDidMount()
   {
-    console.log("YA");
-    let BattleTypeChart = require("./assets/typechart.js")
-    console.log(BattleTypeChart);
+    console.log("Yeahhh");
+    // let BattleTypeChart = require("./assets/typechart.js")
+    // console.log(BattleTypeChart);
+
+
+
+    var appOutput = [];
+    var output;
+
+
+    (async () => {
+        while ((output = await this.stream.read())) {
+            // console.log('******************************************************');
+            console.log(output);
+            // console.log('******************************************************');
+            // turn.transformData(output);
+        }
+    })();
+
+
   }
 
 
   render() {
+    let Sim = require('./sim');
+    this.stream = new Sim.BattleStream();
     return (
       <TabNavigator>
         <TabNavigator.Item

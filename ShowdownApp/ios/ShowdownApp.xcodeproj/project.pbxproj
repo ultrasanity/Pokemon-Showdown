@@ -5,6 +5,7 @@
 	};
 	objectVersion = 46;
 	objects = {
+
 /* Begin PBXBuildFile section */
 		00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302AC1ABCB8CE00DB3ED1 /* libRCTActionSheet.a */; };
 		00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302BA1ABCB90400DB3ED1 /* libRCTGeolocation.a */; };
@@ -22,6 +23,8 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		140ED2AC1D01E1AD002B40FF /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
+		15B1293774D541B89F9FB96A /* libRNNodeJsMobile.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1884CFB6846C4F89B79ED8DE /* libRNNodeJsMobile.a */; };
+		294DCC9717E544C3B91A7792 /* NodeMobile.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 355DBEBCF8614D73A2A784E4 /* NodeMobile.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
@@ -36,14 +39,12 @@
 		2DCD954D1E0B4F2C00145EB5 /* ShowdownAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* ShowdownAppTests.m */; };
 		2DF0FFEE2056DD460020B375 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DAD3EA31DF850E9000B6D8A /* libReact.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
+		A513CE80C0D6403DA8BCCC33 /* NodeMobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 355DBEBCF8614D73A2A784E4 /* NodeMobile.framework */; };
 		ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBDB9271DFEBF0700ED6528 /* libRCTBlob.a */; };
+		C59D3B9C0E6F423B8CC44734 /* builtin_modules in Resources */ = {isa = PBXBuildFile; fileRef = A53247E696864D54A2A44F73 /* builtin_modules */; };
+		D61DBA9C05B24A9EA102420A /* nodejs-project in Resources */ = {isa = PBXBuildFile; fileRef = 114FAEEB276F49D78DBB5881 /* nodejs-project */; };
 		ED297163215061F000B7C4FE /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED297162215061F000B7C4FE /* JavaScriptCore.framework */; };
 		ED2971652150620600B7C4FE /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED2971642150620600B7C4FE /* JavaScriptCore.framework */; };
-		15B1293774D541B89F9FB96A /* libRNNodeJsMobile.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1884CFB6846C4F89B79ED8DE /* libRNNodeJsMobile.a */; };
-		A513CE80C0D6403DA8BCCC33 /* NodeMobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 355DBEBCF8614D73A2A784E4 /* NodeMobile.framework */; };
-		294DCC9717E544C3B91A7792 /* NodeMobile.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 355DBEBCF8614D73A2A784E4 /* NodeMobile.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		D61DBA9C05B24A9EA102420A /* nodejs-project in Resources */ = {isa = PBXBuildFile; fileRef = 114FAEEB276F49D78DBB5881 /* nodejs-project */; };
-		C59D3B9C0E6F423B8CC44734 /* builtin_modules in Resources */ = {isa = PBXBuildFile; fileRef = A53247E696864D54A2A44F73 /* builtin_modules */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -180,20 +181,6 @@
 			remoteGlobalIDString = 3D383D621EBD27B9005632C8;
 			remoteInfo = "double-conversion-tvOS";
 		};
-		2DF0FFEA2056DD460020B375 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 146833FF1AC3E56700842450 /* React.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 9936F3131F5F2E4B0010BF04;
-			remoteInfo = privatedata;
-		};
-		2DF0FFEC2056DD460020B375 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 146833FF1AC3E56700842450 /* React.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 9936F32F1F5F2E5B0010BF04;
-			remoteInfo = "privatedata-tvOS";
-		};
 		3DAD3E831DF850E9000B6D8A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 00C302BB1ABCB91800DB3ED1 /* RCTImage.xcodeproj */;
@@ -271,20 +258,6 @@
 			remoteGlobalIDString = 3D3CD9321DE5FBEE00167DC4;
 			remoteInfo = "cxxreact-tvOS";
 		};
-		3DAD3EAC1DF850E9000B6D8A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 146833FF1AC3E56700842450 /* React.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 3D3CD90B1DE5FBD600167DC4;
-			remoteInfo = jschelpers;
-		};
-		3DAD3EAE1DF850E9000B6D8A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 146833FF1AC3E56700842450 /* React.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 3D3CD9181DE5FBD800167DC4;
-			remoteInfo = "jschelpers-tvOS";
-		};
 		5E9157321DD0AC6500FF2AA8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */;
@@ -320,7 +293,56 @@
 			remoteGlobalIDString = 358F4ED71D1E81A9004DF814;
 			remoteInfo = RCTBlob;
 		};
+		CD18197F22BF17E600E5BE56 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 146833FF1AC3E56700842450 /* React.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EDEBC6D6214B3E7000DD5AC8;
+			remoteInfo = jsi;
+		};
+		CD18198122BF17E600E5BE56 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 146833FF1AC3E56700842450 /* React.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EDEBC73B214B45A300DD5AC8;
+			remoteInfo = jsiexecutor;
+		};
+		CD18198322BF17E600E5BE56 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 146833FF1AC3E56700842450 /* React.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = ED296FB6214C9A0900B7C4FE;
+			remoteInfo = "jsi-tvOS";
+		};
+		CD18198522BF17E600E5BE56 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 146833FF1AC3E56700842450 /* React.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = ED296FEE214C9CF800B7C4FE;
+			remoteInfo = "jsiexecutor-tvOS";
+		};
+		CD18198A22BF17E900E5BE56 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1FD6E5D5418E4F998B70008D /* RNNodeJsMobile.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 134814201AA4EA6300B7C361;
+			remoteInfo = RNNodeJsMobile;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		6BFA0BB77A6F4F4B8517CB4D /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				294DCC9717E544C3B91A7792 /* NodeMobile.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		008F07F21AC5B25A0029DE68 /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
@@ -332,6 +354,7 @@
 		00E356EE1AD99517003FC87E /* ShowdownAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShowdownAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* ShowdownAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShowdownAppTests.m; sourceTree = "<group>"; };
+		114FAEEB276F49D78DBB5881 /* nodejs-project */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "nodejs-project"; path = "../nodejs-assets/nodejs-project"; sourceTree = "<group>"; };
 		139105B61AF99BAD00B5F7CC /* RCTSettings.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTSettings.xcodeproj; path = "../node_modules/react-native/Libraries/Settings/RCTSettings.xcodeproj"; sourceTree = "<group>"; };
 		139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTWebSocket.xcodeproj; path = "../node_modules/react-native/Libraries/WebSocket/RCTWebSocket.xcodeproj"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* ShowdownApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShowdownApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -342,20 +365,19 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ShowdownApp/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = ShowdownApp/main.m; sourceTree = "<group>"; };
 		146833FF1AC3E56700842450 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
+		1884CFB6846C4F89B79ED8DE /* libRNNodeJsMobile.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNNodeJsMobile.a; sourceTree = "<group>"; };
+		1FD6E5D5418E4F998B70008D /* RNNodeJsMobile.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNNodeJsMobile.xcodeproj; path = "../node_modules/nodejs-mobile-react-native/ios/RNNodeJsMobile.xcodeproj"; sourceTree = "<group>"; };
 		2D02E47B1E0B4A5D006451C7 /* ShowdownApp-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ShowdownApp-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* ShowdownApp-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ShowdownApp-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D16E6891FA4F8E400B85C8A /* libReact.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libReact.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		355DBEBCF8614D73A2A784E4 /* NodeMobile.framework */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = wrapper.framework; name = NodeMobile.framework; path = "../node_modules/nodejs-mobile-react-native/ios/NodeMobile.framework"; sourceTree = "<group>"; };
 		5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAnimation.xcodeproj; path = "../node_modules/react-native/Libraries/NativeAnimation/RCTAnimation.xcodeproj"; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
+		A53247E696864D54A2A44F73 /* builtin_modules */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = builtin_modules; path = "../node_modules/nodejs-mobile-react-native/install/resources/nodejs-modules/builtin_modules"; sourceTree = "<group>"; };
 		ADBDB91F1DFEBF0600ED6528 /* RCTBlob.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTBlob.xcodeproj; path = "../node_modules/react-native/Libraries/Blob/RCTBlob.xcodeproj"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
-		1FD6E5D5418E4F998B70008D /* RNNodeJsMobile.xcodeproj */ = {isa = PBXFileReference; name = "RNNodeJsMobile.xcodeproj"; path = "../node_modules/nodejs-mobile-react-native/ios/RNNodeJsMobile.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
-		1884CFB6846C4F89B79ED8DE /* libRNNodeJsMobile.a */ = {isa = PBXFileReference; name = "libRNNodeJsMobile.a"; path = "libRNNodeJsMobile.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
-		355DBEBCF8614D73A2A784E4 /* NodeMobile.framework */ = {isa = PBXFileReference; name = "NodeMobile.framework"; path = "../node_modules/nodejs-mobile-react-native/ios/NodeMobile.framework"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
-		114FAEEB276F49D78DBB5881 /* nodejs-project */ = {isa = PBXFileReference; name = "nodejs-project"; path = "../nodejs-assets/nodejs-project"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		A53247E696864D54A2A44F73 /* builtin_modules */ = {isa = PBXFileReference; name = "builtin_modules"; path = "../node_modules/nodejs-mobile-react-native/install/resources/nodejs-modules/builtin_modules"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -518,16 +540,16 @@
 				3DAD3EA71DF850E9000B6D8A /* libyoga.a */,
 				3DAD3EA91DF850E9000B6D8A /* libcxxreact.a */,
 				3DAD3EAB1DF850E9000B6D8A /* libcxxreact.a */,
-				3DAD3EAD1DF850E9000B6D8A /* libjschelpers.a */,
-				3DAD3EAF1DF850E9000B6D8A /* libjschelpers.a */,
 				2DF0FFDF2056DD460020B375 /* libjsinspector.a */,
 				2DF0FFE12056DD460020B375 /* libjsinspector-tvOS.a */,
 				2DF0FFE32056DD460020B375 /* libthird-party.a */,
 				2DF0FFE52056DD460020B375 /* libthird-party.a */,
 				2DF0FFE72056DD460020B375 /* libdouble-conversion.a */,
 				2DF0FFE92056DD460020B375 /* libdouble-conversion.a */,
-				2DF0FFEB2056DD460020B375 /* libprivatedata.a */,
-				2DF0FFED2056DD460020B375 /* libprivatedata-tvOS.a */,
+				CD18198022BF17E600E5BE56 /* libjsi.a */,
+				CD18198222BF17E600E5BE56 /* libjsiexecutor.a */,
+				CD18198422BF17E600E5BE56 /* libjsi-tvOS.a */,
+				CD18198622BF17E600E5BE56 /* libjsiexecutor-tvOS.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -600,6 +622,7 @@
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				114FAEEB276F49D78DBB5881 /* nodejs-project */,
 				A53247E696864D54A2A44F73 /* builtin_modules */,
+				CD18195922BF17E500E5BE56 /* Recovered References */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -626,11 +649,20 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		5F34DD91CC934C2981BB758C /* Resources */ = {
-			isa = "PBXGroup";
+		CD18195922BF17E500E5BE56 /* Recovered References */ = {
+			isa = PBXGroup;
 			children = (
+				1884CFB6846C4F89B79ED8DE /* libRNNodeJsMobile.a */,
 			);
-			name = Resources;
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
+		CD18198722BF17E800E5BE56 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CD18198B22BF17E900E5BE56 /* libRNNodeJsMobile.a */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -741,6 +773,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -795,6 +828,10 @@
 				{
 					ProductGroup = 146834001AC3E56700842450 /* Products */;
 					ProjectRef = 146833FF1AC3E56700842450 /* React.xcodeproj */;
+				},
+				{
+					ProductGroup = CD18198722BF17E800E5BE56 /* Products */;
+					ProjectRef = 1FD6E5D5418E4F998B70008D /* RNNodeJsMobile.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -927,20 +964,6 @@
 			remoteRef = 2DF0FFE82056DD460020B375 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		2DF0FFEB2056DD460020B375 /* libprivatedata.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libprivatedata.a;
-			remoteRef = 2DF0FFEA2056DD460020B375 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		2DF0FFED2056DD460020B375 /* libprivatedata-tvOS.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = "libprivatedata-tvOS.a";
-			remoteRef = 2DF0FFEC2056DD460020B375 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 		3DAD3E841DF850E9000B6D8A /* libRCTImage-tvOS.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -1018,20 +1041,6 @@
 			remoteRef = 3DAD3EAA1DF850E9000B6D8A /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		3DAD3EAD1DF850E9000B6D8A /* libjschelpers.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libjschelpers.a;
-			remoteRef = 3DAD3EAC1DF850E9000B6D8A /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		3DAD3EAF1DF850E9000B6D8A /* libjschelpers.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libjschelpers.a;
-			remoteRef = 3DAD3EAE1DF850E9000B6D8A /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 		5E9157331DD0AC6500FF2AA8 /* libRCTAnimation.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -1065,6 +1074,41 @@
 			fileType = archive.ar;
 			path = libRCTBlob.a;
 			remoteRef = ADBDB9261DFEBF0700ED6528 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		CD18198022BF17E600E5BE56 /* libjsi.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libjsi.a;
+			remoteRef = CD18197F22BF17E600E5BE56 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		CD18198222BF17E600E5BE56 /* libjsiexecutor.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libjsiexecutor.a;
+			remoteRef = CD18198122BF17E600E5BE56 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		CD18198422BF17E600E5BE56 /* libjsi-tvOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libjsi-tvOS.a";
+			remoteRef = CD18198322BF17E600E5BE56 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		CD18198622BF17E600E5BE56 /* libjsiexecutor-tvOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libjsiexecutor-tvOS.a";
+			remoteRef = CD18198522BF17E600E5BE56 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		CD18198B22BF17E900E5BE56 /* libRNNodeJsMobile.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRNNodeJsMobile.a;
+			remoteRef = CD18198A22BF17E900E5BE56 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -1120,6 +1164,20 @@
 			shellPath = /bin/sh;
 			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
 		};
+		1EADD8C6C78048A6B5D9AE20 /* Sign NodeJS Mobile Native Modules */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Sign NodeJS Mobile Native Modules";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\nset -e\nif [ -z \"$NODEJS_MOBILE_BUILD_NATIVE_MODULES\" ]; then\n# If build native modules preference is not set, look for it in the project's\n#nodejs-assets/BUILD_NATIVE_MODULES.txt file.\nNODEJS_ASSETS_DIR=\"$( cd \"$PROJECT_DIR\" && cd ../nodejs-assets/ && pwd )\"\nPREFERENCE_FILE_PATH=\"$NODEJS_ASSETS_DIR/BUILD_NATIVE_MODULES.txt\"\n  if [ -f \"$PREFERENCE_FILE_PATH\" ]; then\n    NODEJS_MOBILE_BUILD_NATIVE_MODULES=\"$(cat $PREFERENCE_FILE_PATH | xargs)\"\n  fi\nfi\nif [ -z \"$NODEJS_MOBILE_BUILD_NATIVE_MODULES\" ]; then\n# If build native modules preference is not set, try to find .gyp files\n#to turn it on.\n  gypfiles=($(find \"$CODESIGNING_FOLDER_PATH/nodejs-project/\" -type f -name \"*.gyp\"))\n  if [ ${#gypfiles[@]} -gt 0 ]; then\n    NODEJS_MOBILE_BUILD_NATIVE_MODULES=1\n  else\n    NODEJS_MOBILE_BUILD_NATIVE_MODULES=0\n  fi\nfi\nif [ \"1\" != \"$NODEJS_MOBILE_BUILD_NATIVE_MODULES\" ]; then exit 0; fi\n# Delete object files\nfind \"$CODESIGNING_FOLDER_PATH/nodejs-project/\" -name \"*.o\" -type f -delete\nfind \"$CODESIGNING_FOLDER_PATH/nodejs-project/\" -name \"*.a\" -type f -delete\n# Create Info.plist for each framework built and loader override.\nPATCH_SCRIPT_DIR=\"$( cd \"$PROJECT_DIR\" && cd ../node_modules/nodejs-mobile-react-native/scripts/ && pwd )\"\nNODEJS_PROJECT_DIR=\"$( cd \"$CODESIGNING_FOLDER_PATH\" && cd nodejs-project/ && pwd )\"\nnode \"$PATCH_SCRIPT_DIR\"/ios-create-plists-and-dlopen-override.js $NODEJS_PROJECT_DIR\n# Embed every resulting .framework in the application and delete them afterwards.\nembed_framework()\n{\n    FRAMEWORK_NAME=\"$(basename \"$1\")\"\n    cp -r \"$1\" \"$TARGET_BUILD_DIR/$FRAMEWORKS_FOLDER_PATH/\"\n    \n    /usr/bin/codesign --force --sign $EXPANDED_CODE_SIGN_IDENTITY --preserve-metadata=identifier,entitlements,flags --timestamp=none \"$TARGET_BUILD_DIR/$FRAMEWORKS_FOLDER_PATH/$FRAMEWORK_NAME\"\n}\nfind \"$CODESIGNING_FOLDER_PATH/nodejs-project/\" -name \"*.framework\" -type d | while read frmwrk_path; do embed_framework \"$frmwrk_path\"; done\n\n#Delete gyp temporary .deps dependency folders from the project structure.\nfind \"$CODESIGNING_FOLDER_PATH/nodejs-project/\" -path \"*/.deps/*\" -delete\nfind \"$CODESIGNING_FOLDER_PATH/nodejs-project/\" -name \".deps\" -type d -delete\n\n#Delete frameworks from their build paths\nfind \"$CODESIGNING_FOLDER_PATH/nodejs-project/\" -path \"*/*.framework/*\" -delete\nfind \"$CODESIGNING_FOLDER_PATH/nodejs-project/\" -name \"*.framework\" -type d -delete\n";
+		};
 		2D02E4CB1E0B4B27006451C7 /* Bundle React Native Code And Images */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1139,154 +1197,28 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
+			inputPaths = (
+			);
 			name = "Build NodeJS Mobile Native Modules";
-			inputPaths = (
-			);
 			outputPaths = (
-			);
-			shellPath = /bin/sh;
-			shellScript = "
-set -e
-if [ -z \"$NODEJS_MOBILE_BUILD_NATIVE_MODULES\" ]; then
-# If build native modules preference is not set, look for it in the project's
-#nodejs-assets/BUILD_NATIVE_MODULES.txt file.
-NODEJS_ASSETS_DIR=\"$( cd \"$PROJECT_DIR\" && cd ../nodejs-assets/ && pwd )\"
-PREFERENCE_FILE_PATH=\"$NODEJS_ASSETS_DIR/BUILD_NATIVE_MODULES.txt\"
-  if [ -f \"$PREFERENCE_FILE_PATH\" ]; then
-    NODEJS_MOBILE_BUILD_NATIVE_MODULES=\"$(cat $PREFERENCE_FILE_PATH | xargs)\"
-  fi
-fi
-if [ -z \"$NODEJS_MOBILE_BUILD_NATIVE_MODULES\" ]; then
-# If build native modules preference is not set, try to find .gyp files
-#to turn it on.
-  gypfiles=($(find \"$CODESIGNING_FOLDER_PATH/nodejs-project/\" -type f -name \"*.gyp\"))
-  if [ ${#gypfiles[@]} -gt 0 ]; then
-    NODEJS_MOBILE_BUILD_NATIVE_MODULES=1
-  else
-    NODEJS_MOBILE_BUILD_NATIVE_MODULES=0
-  fi
-fi
-if [ \"1\" != \"$NODEJS_MOBILE_BUILD_NATIVE_MODULES\" ]; then exit 0; fi
-# Delete object files that may already come from within the npm package.
-find \"$CODESIGNING_FOLDER_PATH/nodejs-project/\" -name \"*.o\" -type f -delete
-find \"$CODESIGNING_FOLDER_PATH/nodejs-project/\" -name \"*.a\" -type f -delete
-find \"$CODESIGNING_FOLDER_PATH/nodejs-project/\" -name \"*.node\" -type f -delete
-# Delete bundle contents that may be there from previous builds.
-find \"$CODESIGNING_FOLDER_PATH/nodejs-project/\" -path \"*/*.node/*\" -delete
-find \"$CODESIGNING_FOLDER_PATH/nodejs-project/\" -name \"*.node\" -type d -delete
-find \"$CODESIGNING_FOLDER_PATH/nodejs-project/\" -path \"*/*.framework/*\" -delete
-find \"$CODESIGNING_FOLDER_PATH/nodejs-project/\" -name \"*.framework\" -type d -delete
-# Apply patches to the modules package.json
-if [ -d \"$CODESIGNING_FOLDER_PATH\"/nodejs-project/node_modules/ ]; then
-  PATCH_SCRIPT_DIR=\"$( cd \"$PROJECT_DIR\" && cd ../node_modules/nodejs-mobile-react-native/scripts/ && pwd )\"
-  NODEJS_PROJECT_MODULES_DIR=\"$( cd \"$CODESIGNING_FOLDER_PATH\" && cd nodejs-project/node_modules/ && pwd )\"
-  node \"$PATCH_SCRIPT_DIR\"/patch-package.js $NODEJS_PROJECT_MODULES_DIR
-fi
-# Get the nodejs-mobile-gyp location
-if [ -d \"$PROJECT_DIR/../node_modules/nodejs-mobile-gyp/\" ]; then
-  NODEJS_MOBILE_GYP_DIR=\"$( cd \"$PROJECT_DIR\" && cd ../node_modules/nodejs-mobile-gyp/ && pwd )\"
-else
-  NODEJS_MOBILE_GYP_DIR=\"$( cd \"$PROJECT_DIR\" && cd ../node_modules/nodejs-mobile-react-native/node_modules/nodejs-mobile-gyp/ && pwd )\"
-fi
-NODEJS_MOBILE_GYP_BIN_FILE=\"$NODEJS_MOBILE_GYP_DIR\"/bin/node-gyp.js
-# Rebuild modules with right environment
-NODEJS_HEADERS_DIR=\"$( cd \"$PROJECT_DIR\" && cd ../node_modules/nodejs-mobile-react-native/ios/libnode/ && pwd )\"
-pushd $CODESIGNING_FOLDER_PATH/nodejs-project/
-if [ \"$PLATFORM_NAME\" == \"iphoneos\" ]
-then
-  GYP_DEFINES=\"OS=ios\" npm_config_nodedir=\"$NODEJS_HEADERS_DIR\" npm_config_node_gyp=\"$NODEJS_MOBILE_GYP_BIN_FILE\" npm_config_platform=\"ios\" npm_config_format=\"make-ios\" npm_config_node_engine=\"chakracore\" npm_config_arch=\"arm64\" npm --verbose rebuild --build-from-source
-else
-  GYP_DEFINES=\"OS=ios\" npm_config_nodedir=\"$NODEJS_HEADERS_DIR\" npm_config_node_gyp=\"$NODEJS_MOBILE_GYP_BIN_FILE\" npm_config_platform=\"ios\" npm_config_format=\"make-ios\" npm_config_node_engine=\"chakracore\" npm_config_arch=\"x64\" npm --verbose rebuild --build-from-source
-fi
-popd
-";
-		};
-		1EADD8C6C78048A6B5D9AE20 /* Sign NodeJS Mobile Native Modules */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
-			name = "Sign NodeJS Mobile Native Modules";
-			inputPaths = (
-			);
-			outputPaths = (
-			);
 			shellPath = /bin/sh;
-			shellScript = "
-set -e
-if [ -z \"$NODEJS_MOBILE_BUILD_NATIVE_MODULES\" ]; then
-# If build native modules preference is not set, look for it in the project's
-#nodejs-assets/BUILD_NATIVE_MODULES.txt file.
-NODEJS_ASSETS_DIR=\"$( cd \"$PROJECT_DIR\" && cd ../nodejs-assets/ && pwd )\"
-PREFERENCE_FILE_PATH=\"$NODEJS_ASSETS_DIR/BUILD_NATIVE_MODULES.txt\"
-  if [ -f \"$PREFERENCE_FILE_PATH\" ]; then
-    NODEJS_MOBILE_BUILD_NATIVE_MODULES=\"$(cat $PREFERENCE_FILE_PATH | xargs)\"
-  fi
-fi
-if [ -z \"$NODEJS_MOBILE_BUILD_NATIVE_MODULES\" ]; then
-# If build native modules preference is not set, try to find .gyp files
-#to turn it on.
-  gypfiles=($(find \"$CODESIGNING_FOLDER_PATH/nodejs-project/\" -type f -name \"*.gyp\"))
-  if [ ${#gypfiles[@]} -gt 0 ]; then
-    NODEJS_MOBILE_BUILD_NATIVE_MODULES=1
-  else
-    NODEJS_MOBILE_BUILD_NATIVE_MODULES=0
-  fi
-fi
-if [ \"1\" != \"$NODEJS_MOBILE_BUILD_NATIVE_MODULES\" ]; then exit 0; fi
-# Delete object files
-find \"$CODESIGNING_FOLDER_PATH/nodejs-project/\" -name \"*.o\" -type f -delete
-find \"$CODESIGNING_FOLDER_PATH/nodejs-project/\" -name \"*.a\" -type f -delete
-# Create Info.plist for each framework built and loader override.
-PATCH_SCRIPT_DIR=\"$( cd \"$PROJECT_DIR\" && cd ../node_modules/nodejs-mobile-react-native/scripts/ && pwd )\"
-NODEJS_PROJECT_DIR=\"$( cd \"$CODESIGNING_FOLDER_PATH\" && cd nodejs-project/ && pwd )\"
-node \"$PATCH_SCRIPT_DIR\"/ios-create-plists-and-dlopen-override.js $NODEJS_PROJECT_DIR
-# Embed every resulting .framework in the application and delete them afterwards.
-embed_framework()
-{
-    FRAMEWORK_NAME=\"$(basename \"$1\")\"
-    cp -r \"$1\" \"$TARGET_BUILD_DIR/$FRAMEWORKS_FOLDER_PATH/\"
-    
-    /usr/bin/codesign --force --sign $EXPANDED_CODE_SIGN_IDENTITY --preserve-metadata=identifier,entitlements,flags --timestamp=none \"$TARGET_BUILD_DIR/$FRAMEWORKS_FOLDER_PATH/$FRAMEWORK_NAME\"
-}
-find \"$CODESIGNING_FOLDER_PATH/nodejs-project/\" -name \"*.framework\" -type d | while read frmwrk_path; do embed_framework \"$frmwrk_path\"; done
-
-#Delete gyp temporary .deps dependency folders from the project structure.
-find \"$CODESIGNING_FOLDER_PATH/nodejs-project/\" -path \"*/.deps/*\" -delete
-find \"$CODESIGNING_FOLDER_PATH/nodejs-project/\" -name \".deps\" -type d -delete
-
-#Delete frameworks from their build paths
-find \"$CODESIGNING_FOLDER_PATH/nodejs-project/\" -path \"*/*.framework/*\" -delete
-find \"$CODESIGNING_FOLDER_PATH/nodejs-project/\" -name \"*.framework\" -type d -delete
-";
+			shellScript = "\nset -e\nif [ -z \"$NODEJS_MOBILE_BUILD_NATIVE_MODULES\" ]; then\n# If build native modules preference is not set, look for it in the project's\n#nodejs-assets/BUILD_NATIVE_MODULES.txt file.\nNODEJS_ASSETS_DIR=\"$( cd \"$PROJECT_DIR\" && cd ../nodejs-assets/ && pwd )\"\nPREFERENCE_FILE_PATH=\"$NODEJS_ASSETS_DIR/BUILD_NATIVE_MODULES.txt\"\n  if [ -f \"$PREFERENCE_FILE_PATH\" ]; then\n    NODEJS_MOBILE_BUILD_NATIVE_MODULES=\"$(cat $PREFERENCE_FILE_PATH | xargs)\"\n  fi\nfi\nif [ -z \"$NODEJS_MOBILE_BUILD_NATIVE_MODULES\" ]; then\n# If build native modules preference is not set, try to find .gyp files\n#to turn it on.\n  gypfiles=($(find \"$CODESIGNING_FOLDER_PATH/nodejs-project/\" -type f -name \"*.gyp\"))\n  if [ ${#gypfiles[@]} -gt 0 ]; then\n    NODEJS_MOBILE_BUILD_NATIVE_MODULES=1\n  else\n    NODEJS_MOBILE_BUILD_NATIVE_MODULES=0\n  fi\nfi\nif [ \"1\" != \"$NODEJS_MOBILE_BUILD_NATIVE_MODULES\" ]; then exit 0; fi\n# Delete object files that may already come from within the npm package.\nfind \"$CODESIGNING_FOLDER_PATH/nodejs-project/\" -name \"*.o\" -type f -delete\nfind \"$CODESIGNING_FOLDER_PATH/nodejs-project/\" -name \"*.a\" -type f -delete\nfind \"$CODESIGNING_FOLDER_PATH/nodejs-project/\" -name \"*.node\" -type f -delete\n# Delete bundle contents that may be there from previous builds.\nfind \"$CODESIGNING_FOLDER_PATH/nodejs-project/\" -path \"*/*.node/*\" -delete\nfind \"$CODESIGNING_FOLDER_PATH/nodejs-project/\" -name \"*.node\" -type d -delete\nfind \"$CODESIGNING_FOLDER_PATH/nodejs-project/\" -path \"*/*.framework/*\" -delete\nfind \"$CODESIGNING_FOLDER_PATH/nodejs-project/\" -name \"*.framework\" -type d -delete\n# Apply patches to the modules package.json\nif [ -d \"$CODESIGNING_FOLDER_PATH\"/nodejs-project/node_modules/ ]; then\n  PATCH_SCRIPT_DIR=\"$( cd \"$PROJECT_DIR\" && cd ../node_modules/nodejs-mobile-react-native/scripts/ && pwd )\"\n  NODEJS_PROJECT_MODULES_DIR=\"$( cd \"$CODESIGNING_FOLDER_PATH\" && cd nodejs-project/node_modules/ && pwd )\"\n  node \"$PATCH_SCRIPT_DIR\"/patch-package.js $NODEJS_PROJECT_MODULES_DIR\nfi\n# Get the nodejs-mobile-gyp location\nif [ -d \"$PROJECT_DIR/../node_modules/nodejs-mobile-gyp/\" ]; then\n  NODEJS_MOBILE_GYP_DIR=\"$( cd \"$PROJECT_DIR\" && cd ../node_modules/nodejs-mobile-gyp/ && pwd )\"\nelse\n  NODEJS_MOBILE_GYP_DIR=\"$( cd \"$PROJECT_DIR\" && cd ../node_modules/nodejs-mobile-react-native/node_modules/nodejs-mobile-gyp/ && pwd )\"\nfi\nNODEJS_MOBILE_GYP_BIN_FILE=\"$NODEJS_MOBILE_GYP_DIR\"/bin/node-gyp.js\n# Rebuild modules with right environment\nNODEJS_HEADERS_DIR=\"$( cd \"$PROJECT_DIR\" && cd ../node_modules/nodejs-mobile-react-native/ios/libnode/ && pwd )\"\npushd $CODESIGNING_FOLDER_PATH/nodejs-project/\nif [ \"$PLATFORM_NAME\" == \"iphoneos\" ]\nthen\n  GYP_DEFINES=\"OS=ios\" npm_config_nodedir=\"$NODEJS_HEADERS_DIR\" npm_config_node_gyp=\"$NODEJS_MOBILE_GYP_BIN_FILE\" npm_config_platform=\"ios\" npm_config_format=\"make-ios\" npm_config_node_engine=\"chakracore\" npm_config_arch=\"arm64\" npm --verbose rebuild --build-from-source\nelse\n  GYP_DEFINES=\"OS=ios\" npm_config_nodedir=\"$NODEJS_HEADERS_DIR\" npm_config_node_gyp=\"$NODEJS_MOBILE_GYP_BIN_FILE\" npm_config_platform=\"ios\" npm_config_format=\"make-ios\" npm_config_node_engine=\"chakracore\" npm_config_arch=\"x64\" npm --verbose rebuild --build-from-source\nfi\npopd\n";
 		};
 		AD788162495148B89DDA7784 /* Remove NodeJS Mobile Framework Simulator Strips */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
-			name = "Remove NodeJS Mobile Framework Simulator Strips";
 			inputPaths = (
 			);
+			name = "Remove NodeJS Mobile Framework Simulator Strips";
 			outputPaths = (
 			);
+			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "
-set -e
-FRAMEWORK_BINARY_PATH=\"$TARGET_BUILD_DIR/$FRAMEWORKS_FOLDER_PATH/NodeMobile.framework/NodeMobile\"
-FRAMEWORK_STRIPPED_PATH=\"$FRAMEWORK_BINARY_PATH-strip\"
-if [ \"$PLATFORM_NAME\" != \"iphonesimulator\" ]; then
-  if $(lipo \"$FRAMEWORK_BINARY_PATH\" -verify_arch \"x86_64\") ; then
-    lipo -output \"$FRAMEWORK_STRIPPED_PATH\" -remove \"x86_64\" \"$FRAMEWORK_BINARY_PATH\"
-    rm \"$FRAMEWORK_BINARY_PATH\"
-    mv \"$FRAMEWORK_STRIPPED_PATH\" \"$FRAMEWORK_BINARY_PATH\"
-    echo \"Removed simulator strip from NodeMobile.framework\"
-  fi
-fi
-";
+			shellScript = "\nset -e\nFRAMEWORK_BINARY_PATH=\"$TARGET_BUILD_DIR/$FRAMEWORKS_FOLDER_PATH/NodeMobile.framework/NodeMobile\"\nFRAMEWORK_STRIPPED_PATH=\"$FRAMEWORK_BINARY_PATH-strip\"\nif [ \"$PLATFORM_NAME\" != \"iphonesimulator\" ]; then\n  if $(lipo \"$FRAMEWORK_BINARY_PATH\" -verify_arch \"x86_64\") ; then\n    lipo -output \"$FRAMEWORK_STRIPPED_PATH\" -remove \"x86_64\" \"$FRAMEWORK_BINARY_PATH\"\n    rm \"$FRAMEWORK_BINARY_PATH\"\n    mv \"$FRAMEWORK_STRIPPED_PATH\" \"$FRAMEWORK_BINARY_PATH\"\n    echo \"Removed simulator strip from NodeMobile.framework\"\n  fi\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1357,13 +1289,27 @@ fi
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"../node_modules/nodejs-mobile-react-native/ios\"",
+					"\"../node_modules/nodejs-mobile-react-native/ios\"",
+				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../node_modules/nodejs-mobile-react-native/ios/**",
+				);
 				INFOPLIST_FILE = ShowdownAppTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lc++",
@@ -1371,20 +1317,6 @@ fi
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ShowdownApp.app/ShowdownApp";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-				);
-				HEADER_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(SRCROOT)/../node_modules/nodejs-mobile-react-native/ios/**",
-				);
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"../node_modules/nodejs-mobile-react-native/ios\"",
-					"\"../node_modules/nodejs-mobile-react-native/ios\"",
-				);
-				ENABLE_BITCODE = NO;
 			};
 			name = Debug;
 		};
@@ -1393,9 +1325,23 @@ fi
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"../node_modules/nodejs-mobile-react-native/ios\"",
+					"\"../node_modules/nodejs-mobile-react-native/ios\"",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../node_modules/nodejs-mobile-react-native/ios/**",
+				);
 				INFOPLIST_FILE = ShowdownAppTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lc++",
@@ -1403,20 +1349,6 @@ fi
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ShowdownApp.app/ShowdownApp";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-				);
-				HEADER_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(SRCROOT)/../node_modules/nodejs-mobile-react-native/ios/**",
-				);
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"../node_modules/nodejs-mobile-react-native/ios\"",
-					"\"../node_modules/nodejs-mobile-react-native/ios\"",
-				);
-				ENABLE_BITCODE = NO;
 			};
 			name = Release;
 		};
@@ -1426,6 +1358,15 @@ fi
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"../node_modules/nodejs-mobile-react-native/ios\"",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../node_modules/nodejs-mobile-react-native/ios/**",
+				);
 				INFOPLIST_FILE = ShowdownApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -1436,15 +1377,6 @@ fi
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = ShowdownApp;
 				VERSIONING_SYSTEM = "apple-generic";
-				HEADER_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(SRCROOT)/../node_modules/nodejs-mobile-react-native/ios/**",
-				);
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"../node_modules/nodejs-mobile-react-native/ios\"",
-				);
-				ENABLE_BITCODE = NO;
 			};
 			name = Debug;
 		};
@@ -1453,6 +1385,15 @@ fi
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"../node_modules/nodejs-mobile-react-native/ios\"",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../node_modules/nodejs-mobile-react-native/ios/**",
+				);
 				INFOPLIST_FILE = ShowdownApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -1463,15 +1404,6 @@ fi
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = ShowdownApp;
 				VERSIONING_SYSTEM = "apple-generic";
-				HEADER_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(SRCROOT)/../node_modules/nodejs-mobile-react-native/ios/**",
-				);
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"../node_modules/nodejs-mobile-react-native/ios\"",
-				);
-				ENABLE_BITCODE = NO;
 			};
 			name = Release;
 		};
@@ -1485,10 +1417,24 @@ fi
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_BITCODE = NO;
 				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"../node_modules/nodejs-mobile-react-native/ios\"",
+					"\"../node_modules/nodejs-mobile-react-native/ios\"",
+				);
 				GCC_NO_COMMON_BLOCKS = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../node_modules/nodejs-mobile-react-native/ios/**",
+				);
 				INFOPLIST_FILE = "ShowdownApp-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lc++",
@@ -1498,20 +1444,6 @@ fi
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.2;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-				);
-				HEADER_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(SRCROOT)/../node_modules/nodejs-mobile-react-native/ios/**",
-				);
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"../node_modules/nodejs-mobile-react-native/ios\"",
-					"\"../node_modules/nodejs-mobile-react-native/ios\"",
-				);
-				ENABLE_BITCODE = NO;
 			};
 			name = Debug;
 		};
@@ -1526,9 +1458,23 @@ fi
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"../node_modules/nodejs-mobile-react-native/ios\"",
+					"\"../node_modules/nodejs-mobile-react-native/ios\"",
+				);
 				GCC_NO_COMMON_BLOCKS = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../node_modules/nodejs-mobile-react-native/ios/**",
+				);
 				INFOPLIST_FILE = "ShowdownApp-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lc++",
@@ -1538,20 +1484,6 @@ fi
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.2;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-				);
-				HEADER_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(SRCROOT)/../node_modules/nodejs-mobile-react-native/ios/**",
-				);
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"../node_modules/nodejs-mobile-react-native/ios\"",
-					"\"../node_modules/nodejs-mobile-react-native/ios\"",
-				);
-				ENABLE_BITCODE = NO;
 			};
 			name = Release;
 		};
@@ -1564,10 +1496,24 @@ fi
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_BITCODE = NO;
 				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"../node_modules/nodejs-mobile-react-native/ios\"",
+					"\"../node_modules/nodejs-mobile-react-native/ios\"",
+				);
 				GCC_NO_COMMON_BLOCKS = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../node_modules/nodejs-mobile-react-native/ios/**",
+				);
 				INFOPLIST_FILE = "ShowdownApp-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lc++",
@@ -1577,20 +1523,6 @@ fi
 				SDKROOT = appletvos;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ShowdownApp-tvOS.app/ShowdownApp-tvOS";
 				TVOS_DEPLOYMENT_TARGET = 10.1;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-				);
-				HEADER_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(SRCROOT)/../node_modules/nodejs-mobile-react-native/ios/**",
-				);
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"../node_modules/nodejs-mobile-react-native/ios\"",
-					"\"../node_modules/nodejs-mobile-react-native/ios\"",
-				);
-				ENABLE_BITCODE = NO;
 			};
 			name = Debug;
 		};
@@ -1604,9 +1536,23 @@ fi
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"../node_modules/nodejs-mobile-react-native/ios\"",
+					"\"../node_modules/nodejs-mobile-react-native/ios\"",
+				);
 				GCC_NO_COMMON_BLOCKS = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../node_modules/nodejs-mobile-react-native/ios/**",
+				);
 				INFOPLIST_FILE = "ShowdownApp-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lc++",
@@ -1616,20 +1562,6 @@ fi
 				SDKROOT = appletvos;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ShowdownApp-tvOS.app/ShowdownApp-tvOS";
 				TVOS_DEPLOYMENT_TARGET = 10.1;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-				);
-				HEADER_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(SRCROOT)/../node_modules/nodejs-mobile-react-native/ios/**",
-				);
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"../node_modules/nodejs-mobile-react-native/ios\"",
-					"\"../node_modules/nodejs-mobile-react-native/ios\"",
-				);
-				ENABLE_BITCODE = NO;
 			};
 			name = Release;
 		};
@@ -1662,6 +1594,7 @@ fi
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1683,7 +1616,6 @@ fi
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
-				ENABLE_BITCODE = NO;
 			};
 			name = Debug;
 		};
@@ -1716,6 +1648,7 @@ fi
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
+				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1730,7 +1663,6 @@ fi
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
-				ENABLE_BITCODE = NO;
 			};
 			name = Release;
 		};
@@ -1783,20 +1715,6 @@ fi
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		6BFA0BB77A6F4F4B8517CB4D /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				294DCC9717E544C3B91A7792 /* NodeMobile.framework in Embed Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			name = "Embed Frameworks";
-			dstPath = "";
-			dstSubfolderSpec = 10;
-		};
-/* End PBXCopyFilesBuildPhase section */
 	};
 	rootObject = 83CBB9F71A601CBA00E9B192 /* Project object */;
 }
